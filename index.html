@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="helper.js" defer></script> -->
+    <style>
+      td {
+        vertical-align: middle;
+      }
+      audio {
+        width: 20vw;
+        min-width: 100px;
+        max-width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="container pt-5 mt-5 shadow p-5 mb-5 bg-white rounded"> -->
+      <div class="container-fluid pt-60 mt-5 shadow p-5 mb-5 bg-white rounded">
+      <div class="text-center">
+        <h1>Demo Page</h1><br/>
+        <h1>Echoes Over Time</h1><h3> Unlocking Length Generalization in Video-to-Audio Generation Models</h3>
+        <!-- <p class="lead fw-bold">
+          |<a
+            href="https://arxiv.org/pdf/2508.00289"
+            class="btn border-white bg-white fw-bold"
+            >Paper</a
+          >|<a
+          href=""
+          class="btn border-white bg-white fw-bold"
+          >Code coming soon</a
+          >|
+        </p> -->
+        <p class="fst-italic mb-0 pt-10">
+          <span class="author-block">
+            Anonymous CVPR Submission 
+          </span>
+        </p>
+        <p><b></b></p>
+      </div>
+      <div class="container-fluid">
+
+        <body>
+        <p style="text-align: center;"><br/>
+          <div class="text-center">
+          <h5>Long-Video to Audio Examples:</h5><br/>
+            <tr>
+              <td><video controls controlslist="nodownload" class="px-1" width="1280" height="620" > <source src='comparison\ours\verylong\bearkid_ours.mp4'>Your browser does not support the audio element.</video></td> 
+              <!-- <td><video controls controlslist="nodownload" class="px-1" width="640" height="360" > <source src='comparison\ours\verylong\sora_planethell_ours_compressed.mp4'>Your browser does not support the audio element.</video></td>  -->
+            </tr><br/>
+            <tr>
+              <td><video controls controlslist="nodownload" class="px-1" width="640" height="360" > <source src='comparison\ours\verylong\sora_cat_war_ours_compressed.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="640" height="360" > <source src='comparison\ours\verylong\aviation_game_ours_compressed.mp4'>Your browser does not support the audio element.</video></td> 
+            </tr>
+            <tr>
+              <td><video controls controlslist="nodownload" class="px-1" width="640" height="360" > <source src='comparison\ours\verylong\sora_planethell_ours_compressed.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="640" height="360" > <source src='comparison\ours\verylong\short_film_zeroshot_ours_compressed.mp4'>Your browser does not support the audio element.</video></td>   
+            </tr>
+            <br/><br/><br/>
+            <h5>Our MMHNet framework:</h5><br/>
+            <img src="teaser.png" height="200" width="800" class="img-fluid">
+            </div>
+        </p>
+        </body>
+            <p>
+                
+            </p>
+    </div>
+      <p>
+        <b>Abstract.</b>  
+        Scaling multimodal alignment between video and audio is challenging, particularly due to limited data and the mismatch between text descriptions and frame-level video information. 
+In this work, we tackle the scaling challenge in multimodal-to-audio generation, examining whether models trained on short instances can generalize to longer ones during testing.
+To tackle this challenge, we present multimodal hierarchical networks so-called  MMHNet, an enhanced extension of state-of-the-art video-to-audio models. Our approach integrates a hierarchical method and non-causal Mamba to support long-form audio generation. Our proposed method significantly improves long audio generation up to more than 5 minutes. We also prove that training short and testing long is possible in the video-to-audio generation tasks without training on the longer durations. We show in our experiments that our proposed method could achieve remarkable results on long-video to audio benchmarks, beating prior works in video-to-audio tasks. Moreover, we showcase our model capability in generating more than 5 minutes, while prior video-to-audio methods fall short in generating with long durations.
+      </p>
+    </div>
+
+
+    <div class="container-fluid shadow p-50 mb-5 bg-white rounded">
+      <h3>Long Video-to-Audio Generation - Comparison with SOTAs<a id="sota"></h3>
+      <!-- <p class="mb-0">
+         384x384 video resolution.
+      </p> -->
+      <div class="container-fluid pt-3 table-responsive">
+        <table class="table table-hover"
+          id="supervision-efficiency-table">
+          <thead>
+            <tr>
+              <!-- <th style="text-align: center" > &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspInput&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th> -->
+              <!-- <th style="text-align: center">Ground-truth</th> -->
+              <th style="text-align: center">MMHNet (ours)  </th>
+              <th style="text-align: center">HunyuanVideo-Foley  </th>
+              <th style="text-align: center">LoVA  </th>
+              <th style="text-align: center">MMAudio </th>
+              <th style="text-align: center">V-AURA </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\ours\-6v1PqgFrDk.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\hunyuan\-6v1PqgFrDk.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\lova\-6v1PqgFrDk.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\mmaudio\-6v1PqgFrDk.mp4'>Your browser does not support the audio element.</video></td> \
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\vaura\-6v1PqgFrDk.mp4'>Your browser does not support the audio element.</video></td> 
+            </tr>
+            <tr>
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\ours\rainthunder.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\hunyuan\rainthunder.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\lova\rainthunder.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\mmaudio\rainthunder.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\vaura\rainthunder.mp4'>Your browser does not support the audio element.</video></td> 
+            </tr>
+            <tr>
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\ours\monster.mp4'>Your browser does not support the audio element.</video></td>  
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\hunyuan\monster.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\lova\monster.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\mmaudio\monster.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\vaura\monster.mp4'>Your browser does not support the audio element.</video></td>  
+            </tr>
+            <tr>
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\ours\lvas_agent_car_race.mp4'>Your browser does not support the audio element.</video></td>  
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\hunyuan\lvas_agent_car_race.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\lova\lvas_agent_car_race.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\mmaudio\lvas_agent_car_race.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\vaura\lvas_agent_car_race.mp4'>Your browser does not support the audio element.</video></td>  
+            </tr>
+            <tr>
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\ours\flute.mp4'>Your browser does not support the audio element.</video></td>  
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\hunyuan\flute.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\lova\flute.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\mmaudio\flute.mp4'>Your browser does not support the audio element.</video></td> 
+              <td><video controls controlslist="nodownload" class="px-1" width="320" height="180"> <source src='comparison\vaura\flute.mp4'>Your browser does not support the audio element.</video></td>  
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>
